@@ -3,7 +3,7 @@ FROM python:3.11 AS builddev
 
 RUN apt-get update && apt-get install -y \
     libgl1 \
-    libgl1-mesa-glx \
+    libglx-mesa0 \
     && rm -rf /var/lib/apt/lists/*
 
 # refresh system font cache

@@ -3,10 +3,15 @@
     "build": {
         "context": "..",
         "dockerfile": "../Dockerfile",
-        "options": [
-            "--platform=linux/amd64"
-        ]
+        "target": "rundev",
+        "args": {
+            "BUILDPLATFORM": "linux/amd64"
+        }
     },
+    "workspaceFolder": "/app",
+    "runArgs": [
+        "--platform=linux/amd64"
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
@@ -20,7 +25,12 @@
                 "ms-azuretools.vscode-docker",
                 "mhutchie.git-graph",
                 "bernhard-42.ocp-cad-viewer"
-            ]
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.formatting.provider": "black"
+            }
         }
     }
 }
